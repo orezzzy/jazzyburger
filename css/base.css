@@ -1,0 +1,402 @@
+/*
+ * Jazzy's Burger - Base Styles
+ * Reset, typography, and global utilities
+ */
+
+/* ========================================
+   CSS RESET (Modern)
+   ======================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
+    min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--font-tracking-tight);
+    color: var(--color-text-primary);
+}
+
+h1 {
+    font-size: var(--text-hero);
+    font-weight: var(--font-weight-black);
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: var(--text-section);
+    font-weight: var(--font-weight-bold);
+}
+
+h3 {
+    font-size: var(--text-subsection);
+    font-weight: var(--font-weight-semibold);
+}
+
+h4 {
+    font-size: var(--text-card-title);
+    font-weight: var(--font-weight-semibold);
+}
+
+p {
+    color: var(--color-text-secondary);
+    max-width: 65ch;
+}
+
+.text-accent {
+    color: var(--color-accent-primary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ========================================
+   LAYOUT UTILITIES
+   ======================================== */
+
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.section {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+}
+
+.section--sm {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+/* Flexbox Utilities */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-xs {
+    gap: var(--space-xs);
+}
+
+.gap-sm {
+    gap: var(--space-sm);
+}
+
+.gap-md {
+    gap: var(--space-md);
+}
+
+.gap-lg {
+    gap: var(--space-lg);
+}
+
+/* Grid Utilities */
+.grid {
+    display: grid;
+    gap: var(--grid-gap);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: 0.875rem 1.75rem;
+    font-family: var(--font-display);
+    font-size: var(--text-small);
+    font-weight: var(--font-weight-semibold);
+    text-transform: none;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn--primary {
+    background-color: var(--color-btn-primary-bg);
+    color: var(--color-btn-primary-text);
+    border: 2px solid var(--color-btn-primary-bg);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active {
+    transform: translateY(0);
+}
+
+.btn--secondary {
+    background-color: var(--color-btn-secondary-bg);
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-btn-secondary-border);
+}
+
+.btn--secondary:hover {
+    border-color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+}
+
+.btn--accent {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-inverse);
+    border: 2px solid var(--color-accent-primary);
+}
+
+.btn--accent:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: var(--color-accent-primary);
+    border: 1px solid var(--color-accent-primary);
+    font-weight: 500;
+}
+
+.btn--outline:hover {
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-inverse);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--lg {
+    padding: 1rem 2rem;
+    font-size: var(--text-body);
+}
+
+.btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-caption);
+}
+
+/* ========================================
+   CARD STYLES (Pretty Patty Pattern)
+   ======================================== */
+
+.card {
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    border: 1px solid var(--color-border-light);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card--white {
+    background-color: var(--color-bg-primary);
+}
+
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-1 {
+    transition-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+}
+
+.stagger-4 {
+    transition-delay: 0.4s;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 1024px) {
+    :root {
+        --container-padding: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --container-padding: var(--space-md);
+    }
+
+    .section {
+        padding-top: var(--space-2xl);
+        padding-bottom: var(--space-2xl);
+    }
+
+    .btn {
+        height: 48px;
+        font-size: 0.875rem;
+        font-weight: var(--font-weight-medium);
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-padding: var(--space-sm);
+    }
+}

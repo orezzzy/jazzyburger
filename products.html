@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Jazzy's Burger - Savor the Rhythm</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Clash Display is now self-hosted via @font-face in tokens.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="css/tokens.css?v=155">
+    <link rel="stylesheet" href="css/base.css?v=155">
+    <link rel="stylesheet" href="css/components.css?v=155">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+
+<body>
+
+    <!-- ========================================
+       HEADER
+       ======================================== -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <!-- Logo (Anchored Left) -->
+            <a href="index.html" class="header__logo">
+                <img src="assets/logo.png" alt="Jazzy's Burger Logo" class="header__logo-img" fetchpriority="high">
+            </a>
+
+            <!-- Navigation (Centered) -->
+            <nav class="header__nav">
+                <a href="products.html" class="header__nav-link active">Menu</a>
+                <a href="index.html#locations" class="header__nav-link">Locations</a>
+                <a href="index.html#about" class="header__nav-link">About us</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="header__actions">
+                <button class="header__icon-btn" aria-label="View cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="header__cart-badge">0</span>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html#about" class="mobile-nav__link">About</a>
+        <a href="products.html" class="mobile-nav__link">Menu</a>
+        <a href="index.html#locations" class="mobile-nav__link">Locations</a>
+        <a href="#" class="mobile-nav__link">Affiliate</a>
+    </nav>
+
+    <main>
+        <!-- ========================================
+         MENU HERO
+         ======================================== -->
+        <section class="menu-hero">
+            <div class="container">
+                <div class="menu-hero__inner">
+                    <h1 class="menu-hero__title fade-in-up">
+                        JUICY,<br>MESSY,<br>NECESSARY.
+                    </h1>
+                    <div class="menu-hero__description fade-in-up">
+                        <p>Made by hands that care, for hands that hold.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+         CATEGORY PILL NAVIGATION
+         ======================================== -->
+        <section class="category-nav-section">
+            <div class="container">
+                <div class="category-nav fade-in-up">
+                    <button class="category-btn active" data-category="burgers">
+                        <img src="assets/burger-classic.png" alt="Burgers">
+                        <span>Burgers</span>
+                    </button>
+                    <button class="category-btn" data-category="sides">
+                        <img src="assets/pill-sides.png" alt="Sides">
+                        <span>Sides</span>
+                    </button>
+                    <button class="category-btn" data-category="combos">
+                        <img src="assets/pill-combos.png" alt="Combos">
+                        <span>Combos</span>
+                    </button>
+                    <button class="category-btn" data-category="drinks">
+                        <img src="assets/pill-drinks.png" alt="Drinks">
+                        <span>Drinks</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+         PRODUCT GRID - Using SAME class as Homepage
+         ======================================== -->
+        <section class="products section">
+            <!-- Carousel is FULL-WIDTH (outside container) to match Homepage -->
+            <div class="swiper product-slider" id="menuGrid">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1: Single Beef Burger -->
+                    <div class="swiper-slide" data-category="burgers">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/burger-classic.png" alt="Single Beef Burger"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Single Beef Burger</h3>
+                                <p class="product-card__info">Beef patty, cheese, tomato, cucumber, lettuce, onions,
+                                    spicy mayo.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦17,050</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 2: Double Beef Burger -->
+                    <div class="swiper-slide" data-category="burgers">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/burger-double.png" alt="Double Beef Burger" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Double Beef Burger</h3>
+                                <p class="product-card__info">Two beef patties (marinated in olive oil, garlic,
+                                    lemon), cheese, tomato, cucumber, lettuce, onions, spicy mayo.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦19,250</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 3: Grilled Chicken Burger -->
+                    <div class="swiper-slide" data-category="burgers">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/burger-fancy.png" alt="Grilled Chicken Burger"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Grilled Chicken Burger</h3>
+                                <p class="product-card__info">Marinated grilled chicken breast (olive oil, garlic,
+                                    lemon), cheese, tomato, lettuce, pepper, spicy mayo.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦18,150</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 4: Double Grilled Chicken -->
+                    <div class="swiper-slide" data-category="burgers">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/burger-special.png" alt="Double Grilled Chicken"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Double Grilled Chicken</h3>
+                                <p class="product-card__info">Two marinated grilled chicken breasts, cheese, tomato,
+                                    lettuce, pepper, spicy mayo.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦20,350</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 5: Double Crunchy Chicken -->
+                    <div class="swiper-slide" data-category="burgers">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/burger-double-crunchy-final.png" alt="Double Crunchy Chicken"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Double Crunchy Chicken</h3>
+                                <p class="product-card__info">Two crunchy chicken patties, cheese, tomato, cucumber,
+                                    lettuce, caramelized onions, spicy mayo.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦21,450</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 6: 10x Chicken Nuggets -->
+                    <div class="swiper-slide" data-category="sides">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/chicken-nuggets.png" alt="10x Chicken Nuggets"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">10x Chicken Nuggets</h3>
+                                <p class="product-card__info">Ten crispy golden chicken nuggets with your choice of
+                                    dipping sauce.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦10,499</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 7: 5x Chicken Nuggets -->
+                    <div class="swiper-slide" data-category="sides">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/chicken-nuggets.png" alt="5x Chicken Nuggets"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">5x Chicken Nuggets</h3>
+                                <p class="product-card__info">Five crispy golden chicken nuggets with your choice of
+                                    dipping sauce.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦6,999</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 8: French Fries -->
+                    <div class="swiper-slide" data-category="sides">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/french-fries.png" alt="French Fries" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">French Fries</h3>
+                                <p class="product-card__info">Crispy golden fries seasoned to perfection.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦3,999</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 9: The Jazzy Baby Shakes -->
+                    <div class="swiper-slide" data-category="sides">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/pill-sides.png" alt="The Jazzy Baby Shakes" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">The Jazzy Baby Shakes</h3>
+                                <p class="product-card__info">Premium milkshake blended with your favorite flavors.
+                                </p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦15,400</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Combo 1 -->
+                    <div class="swiper-slide" data-category="combos">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/combo-jazzy-baby-double-grilled-chicken.png"
+                                    alt="A Jazzy Baby & A Double Grilled Chicken burger" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">A Jazzy Baby & A Double Grilled Chicken burger</h3>
+                                <p class="product-card__info">A premium double grilled chicken burger paired with the
+                                    signature Jazzy Baby milkshake bear.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦34,050</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Combo 2 -->
+                    <div class="swiper-slide" data-category="combos">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/combo-suya-burger-milkshake.png" alt="Suya Burger x Milkshake"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Suya Burger x Milkshake</h3>
+                                <p class="product-card__info">A spicy Suya burger paired with a cool, creamy milkshake.
+                                </p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦33,250</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Combo 3 -->
+                    <div class="swiper-slide" data-category="combos">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/combo-double-beef-fries-jazzy-baby.png"
+                                    alt="A Jazzy Baby, A Double Beef & Fries" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">A Jazzy Baby, A Double Beef & Fries</h3>
+                                <p class="product-card__info">Double beef satisfaction with a Jazzy Baby and fries.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦34,150</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Combo 4 -->
+                    <div class="swiper-slide" data-category="combos">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/combo-double-crunchy-chicken-fries-jazzy-baby.png"
+                                    alt="Double Crunchy Chicken x Fries x Jazzy Baby" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Double Crunchy Chicken x Fries x Jazzy Baby</h3>
+                                <p class="product-card__info">Crispy double chicken burger, fries, and our signature
+                                    milkshake bear.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦41,750</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Combo 5 -->
+                    <div class="swiper-slide" data-category="combos">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/combo-2x-jazzy-baby-grilled-chicken.png"
+                                    alt="2x Jazzy Baby & Grilled Chicken" class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">2x Jazzy Baby & Grilled Chicken</h3>
+                                <p class="product-card__info">Two Jazzy Baby milkshake bears paired with a premium
+                                    grilled chicken burger.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦68,600</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Combo 6 -->
+                    <div class="swiper-slide" data-category="combos">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/combo-jazzy-baby-single-beef.png"
+                                    alt="A Jazzy Baby & A Single Beef Burger" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">A Jazzy Baby & A Single Beef Burger</h3>
+                                <p class="product-card__info">Classic single beef burger served with our iconic Jazzy
+                                    Baby milkshake bear.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦31,950</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Combo 7 -->
+                    <div class="swiper-slide" data-category="combos">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/combo-squad-pack.png"
+                                    alt="3x Jazzy Baby, 3x Crunchy Burger, 3x Nuggets (5x) & 3x Fries"
+                                    class="product-card__image" loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">3x Jazzy Baby, 3x Crunchy Burger, 3x Nuggets (5x) & 3x
+                                    Fries</h3>
+                                <p class="product-card__info">The party pack: everything you need for the squad.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦126,250</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 11: Pepsi -->
+                    <div class="swiper-slide" data-category="drinks">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/drink-pepsi.png" alt="Pepsi" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Pepsi (50cl)</h3>
+                                <p class="product-card__info">Chilled cola soft drink.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦2,200</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 12: Coca Cola -->
+                    <div class="swiper-slide" data-category="drinks">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/drink-coca-cola.png" alt="Coca Cola" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Coca Cola (50cl)</h3>
+                                <p class="product-card__info">Classic cola refreshment.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦2,200</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 13: Fanta -->
+                    <div class="swiper-slide" data-category="drinks">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/drink-fanta.png" alt="Fanta" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Fanta (50cl)</h3>
+                                <p class="product-card__info">Orange-flavored sparkling drink.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦2,200</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 14: Sprite -->
+                    <div class="swiper-slide" data-category="drinks">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/drink-sprite.png" alt="Sprite" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Sprite (60cl)</h3>
+                                <p class="product-card__info">Crisp lemon-lime refreshment.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦2,420</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Slide 15: Eva Water -->
+                    <div class="swiper-slide" data-category="drinks">
+                        <article class="product-card">
+                            <div class="product-card__image-wrapper">
+                                <img src="assets/drink-eva-water.png" alt="Eva Water" class="product-card__image"
+                                    loading="lazy">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__name">Eva Water</h3>
+                                <p class="product-card__info">Premium table water, still.</p>
+                                <div class="product-card__pricing">
+                                    <span class="product-card__price-value">₦1,650</span>
+                                    <button class="product-card__add-btn" aria-label="Add to cart">
+                                        <span>Add</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows (desktop only) -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- Pagination Wrapper - positioned between image and name on mobile -->
+                <div class="products__pagination-wrapper">
+                    <div id="menu-pagination" class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================
+       FOOTER
+       ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <!-- Brand Column -->
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <img src="assets/logo-white.png" alt="Jazzy's Burger Logo" class="footer__logo-img">
+                    </div>
+                    <p class="footer__description">
+                        Savor Nigeria's best burgers. Fresh, delicious, and made with love.
+                        Founded by Don Jazzy to bring world-class taste to your table.
+                    </p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/jazzysburger/" class="footer__social-link" target="_blank"
+                            rel="noopener" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/jazzysburger" class="footer__social-link" target="_blank" rel="noopener"
+                            aria-label="X (Twitter)">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/jazzysburger" class="footer__social-link" target="_blank"
+                            rel="noopener" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@jazzysburger" class="footer__social-link" target="_blank"
+                            rel="noopener" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__column">
+                    <h4>Quick Links</h4>
+                    <nav class="footer__links">
+                        <a href="products.html" class="footer__link">Menu</a>
+                        <a href="index.html#locations" class="footer__link">Locations</a>
+                        <a href="index.html#about" class="footer__link">About Us</a>
+                        <a href="#" class="footer__link">Affiliate Program</a>
+                        <a href="products.html" class="footer__link">Order Online</a>
+                    </nav>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer__column">
+                    <h4>Contact</h4>
+                    <nav class="footer__links">
+                        <a href="tel:+2349074666655" class="footer__link">+234 907 466 6655</a>
+                        <a href="mailto:hello@jazzysburger.com" class="footer__link">hello@jazzysburger.com</a>
+                        <span class="footer__link">Lagos, Nigeria</span>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__bottom-description">
+                        Experience the best burgers in Nigeria. Crafted with passion, delivered with love.
+                    </p>
+
+                    <div class="footer__apps">
+                        <span class="footer__apps-label">Download our app</span>
+                        <div class="footer__apps-grid">
+                            <a href="#" class="app-button" aria-label="Download on the App Store">
+                                <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMinYMin meet" class="app-button__svg">
+                                    <path
+                                        d="M10.8 19.3c.1-4.7 3.9-6.3 4-6.3-2.1-3.1-5.5-3.5-6.7-3.6-2.8-.3-5.5 1.6-6.9 1.6-1.4 0-3.6-1.6-6-1.6-3.1 0-5.9 1.8-7.5 4.5-3.2 5.5-.8 13.6 2.3 18.1 1.5 2.2 3.3 4.7 5.7 4.6 2.3-.1 3.2-1.5 6-1.5s3.6 1.5 6 1.4c2.5 0 4-2.2 5.5-4.4 1.7-2.5 2.4-4.9 2.4-5 0 0-4.6-1.8-4.8-7.4zm-2.4-11.8c1.3-1.6 2.1-3.7 1.9-5.9-1.9.1-4.2 1.3-5.6 2.9-1.2 1.4-2.2 3.5-2 5.6 2.1.2 4.2-1 5.7-2.6z"
+                                        fill="#fff" transform="translate(10, 5) scale(0.8)" />
+                                    <text transform="translate(35, 15)" fill="#fff"
+                                        style="font-family: sans-serif; font-size: 8px; font-weight: 500;">Download on
+                                        the</text>
+                                    <text transform="translate(35, 30)" fill="#fff"
+                                        style="font-family: sans-serif; font-size: 14px; font-weight: 700;">App
+                                        Store</text>
+                                </svg>
+                            </a>
+                            <a href="#" class="app-button" aria-label="Get it on Google Play">
+                                <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg"
+                                    preserveAspectRatio="xMinYMin meet" class="app-button__svg">
+                                    <path
+                                        d="M2.3 1.2C1.5 1.9 1 3.1 1 4.5v31c0 1.4.5 2.6 1.3 3.3l.1.1L19.4 20l-.1-.1L2.3 1.2z"
+                                        fill="#fff" transform="translate(10, 5) scale(0.8)" />
+                                    <path
+                                        d="M25 25.7l-5.6-5.7v-.1l5.6-5.7.1.1 6.7 3.8c1.9 1.1 1.9 2.8 0 3.9l-6.7 3.8-.1-.1z"
+                                        fill="#fff" transform="translate(10, 5) scale(0.8)" />
+                                    <path d="M25.1 14.3L19.4 20l-17.1-18.8L2.3 1.2c.6-.7 1.6-.7 2.8 0l20 13.1z"
+                                        fill="#fff" transform="translate(10, 5) scale(0.8)" />
+                                    <path d="M25.1 25.7L5.1 38.8c-1.2.7-2.2.7-2.8 0l-.1-.1L19.4 20l5.7 5.7z" fill="#fff"
+                                        transform="translate(10, 5) scale(0.8)" />
+                                    <text transform="translate(42, 15)" fill="#fff"
+                                        style="font-family: sans-serif; font-size: 8px; font-weight: 500;">GET IT
+                                        ON</text>
+                                    <text transform="translate(42, 30)" fill="#fff"
+                                        style="font-family: sans-serif; font-size: 14px; font-weight: 700;">Google
+                                        Play</text>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__legal-bar">
+                    <div class="footer__legal-links">
+                        <a href="#" class="footer__legal-link">Privacy Policy</a>
+                        <a href="#" class="footer__legal-link">Terms of Service</a>
+                    </div>
+                    <p class="footer__copyright">© 2026 Jazzy's Burger. All rights reserved.</p>
+                </div>
+            </div>
+
+            <!-- Signature Block -->
+            <div class="footer__signature">
+                <p class="footer__signature-text">Crafted with ❤️ by 13Disciples</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+       DRAWER / CUSTOMIZER (M.R. Flow)
+       ======================================== -->
+    <div class="drawer-overlay" id="customizerOverlay"></div>
+    <aside class="drawer" id="customizerDrawer">
+        <div class="drawer__header">
+            <h2 class="drawer__title">Customize Order</h2>
+            <button class="drawer__close" id="closeDrawer" aria-label="Close Customizer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="drawer__content" id="drawerContent">
+            <!-- Dynamically populated via JS -->
+        </div>
+        <div class="drawer__footer">
+            <button class="btn btn--primary btn--full" id="addToOrderBtn">
+                Add to Order — <span id="drawerPrice">₦0</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- ========================================
+       CART DRAWER (The Box)
+       ======================================== -->
+    <div class="drawer-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer drawer" id="cartDrawer">
+        <div class="drawer__header">
+            <h2 class="drawer__title">The Box</h2>
+            <button class="drawer__close" id="closeCart" aria-label="Close Cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="drawer__content" id="cartContent">
+            <!-- Dynamically populated via JS -->
+        </div>
+        <div class="drawer__footer" id="cartFooter">
+            <!-- Dynamically populated via JS -->
+        </div>
+    </aside>
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- App JS -->
+    <script src="js/main.js?v=155"></script>
+
+    <!-- Menu Swiper Init - DESTROY AND REINIT APPROACH -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let menuSwiper = null;
+            const swiperWrapper = document.querySelector('#menuGrid .swiper-wrapper');
+            const categoryBtns = document.querySelectorAll('.category-btn');
+
+            // Store all original slides in an array
+            const allSlides = Array.from(document.querySelectorAll('#menuGrid .swiper-slide'));
+
+            function initSwiper() {
+                const isMobile = window.innerWidth <= 768;
+
+                menuSwiper = new Swiper('#menuGrid', {
+                    loop: allSlides.length > 2, // Only loop if we have enough slides
+                    speed: 800,
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    grabCursor: true,
+                    watchSlidesProgress: true,
+                    resistance: true,
+                    resistanceRatio: 0,
+
+                    // Coverflow for desktop, simple slide for mobile
+                    effect: isMobile ? 'slide' : 'coverflow',
+                    coverflowEffect: isMobile ? {} : {
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 150,
+                        modifier: 2,
+                        slideShadows: false
+                    },
+
+                    pagination: {
+                        el: '#menu-pagination',
+                        clickable: true,
+                        dynamicBullets: true,
+                    },
+
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+
+                    // Handle mousewheel
+                    mousewheel: {
+                        forceToAxis: true,
+                        sensitivity: 1,
+                    },
+
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 0
+                        },
+                        768: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 20
+                        },
+                        1024: {
+                            slidesPerView: 'auto',
+                            spaceBetween: 30
+                        }
+                    }
+                });
+            }
+
+            function filterItems(category) {
+                // 1. Destroy current instance
+                if (menuSwiper) {
+                    menuSwiper.destroy(true, true);
+                    menuSwiper = null;
+                }
+
+                // 2. Clear wrapper
+                swiperWrapper.innerHTML = '';
+
+                // 3. Filter and re-append slides
+                const filteredSlides = allSlides.filter(slide => {
+                    const itemCategory = slide.getAttribute('data-category');
+                    return category === 'all' || itemCategory === category;
+                });
+
+                filteredSlides.forEach(slide => {
+                    swiperWrapper.appendChild(slide);
+                });
+
+                // 4. Re-init with new DOM
+                setTimeout(() => {
+                    initSwiper();
+                }, 50);
+            }
+
+            // Category button handlers
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.getAttribute('data-category');
+
+                    // UI update
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    filterItems(category);
+                });
+            });
+
+            // Initial Filter/Init
+            const activeBtn = document.querySelector('.category-btn.active');
+            if (activeBtn) {
+                const initialCategory = activeBtn.getAttribute('data-category');
+                filterItems(initialCategory);
+            } else {
+                initSwiper();
+            }
+
+            // Handle resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    const currentCategory = document.querySelector('.category-btn.active').getAttribute('data-category');
+                    filterItems(currentCategory);
+                }, 250);
+            });
+        });
+    </script>
+</body>
+
+</html>

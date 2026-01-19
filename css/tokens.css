@@ -1,0 +1,169 @@
+/*
+ * Jazzy's Burger - Design Tokens
+ * Brand colors preserved, layout patterns from Pretty Patty
+ */
+
+/* ========================================
+   SELF-HOSTED FONTS (Clash Display)
+   ======================================== */
+
+@font-face {
+   font-family: 'Clash Display';
+   src: url('../fonts/ClashDisplay-Regular.woff2') format('woff2');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Clash Display';
+   src: url('../fonts/ClashDisplay-Medium.woff2') format('woff2');
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Clash Display';
+   src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2');
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Clash Display';
+   src: url('../fonts/ClashDisplay-Bold.woff2') format('woff2');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+
+:root {
+   /* ========================================
+     COLOR SYSTEM (Jazzy's Burger Brand)
+     ======================================== */
+
+   /* Backgrounds - Warm, appetizing off-whites */
+   --color-bg-primary: #FFF9F5;
+   /* Warm cream - inviting, reduces eye strain */
+   --color-bg-secondary: #FFF5EE;
+   /* Slightly warmer for sections */
+   --color-bg-cream: #FFFAF7;
+   /* Paper bag warmth for cards */
+   /* Pretty Patty warmth */
+   --color-bg-dark: #1C1C1E;
+
+   /* Brand Accent */
+   --color-accent-primary: #b51417;
+   --color-accent-hover: #961114;
+   --color-accent-light: rgba(181, 20, 23, 0.1);
+
+   /* Text */
+   --color-text-primary: #1C1C1E;
+   --color-text-secondary: #637381;
+   --color-text-inverse: #FFFFFF;
+   --color-text-muted: #919EAB;
+
+   /* Borders & Dividers */
+   --color-border: #D0D5DD;
+   --color-border-light: rgba(208, 213, 221, 0.4);
+
+   /* Buttons */
+   --color-btn-primary-bg: #b51417;
+   --color-btn-primary-text: #FFFFFF;
+   --color-btn-secondary-bg: transparent;
+   --color-btn-secondary-border: #D0D5DD;
+
+   /* ========================================
+     TYPOGRAPHY SYSTEM
+     ======================================== */
+
+   /* Font Families */
+   --font-display: 'Clash Display', sans-serif;
+   --font-body: 'Plus Jakarta Sans', sans-serif;
+   --font-tracking-tight: -0.02em;
+
+   /* Font Weights */
+   --font-weight-light: 300;
+   --font-weight-regular: 400;
+   --font-weight-medium: 500;
+   --font-weight-semibold: 600;
+   --font-weight-bold: 700;
+   --font-weight-extrabold: 800;
+   --font-weight-black: 900;
+
+   /* Font Sizes - Fluid Typography */
+   --text-hero: clamp(2.5rem, 5vw, 4rem);
+   --text-hero-tracking: -0.02em;
+   --text-section: clamp(2rem, 4vw, 3rem);
+   --text-subsection: clamp(1.25rem, 2vw, 1.5rem);
+   --text-card-title: 1.5rem;
+   /* Larger for Pretty Patty style */
+   --text-body: 1rem;
+   --text-small: 0.8125rem;
+   /* Slightly smaller for ingredients */
+   --text-caption: 0.5rem;
+
+   /* Line Heights */
+   --leading-tight: 1.1;
+   /* Tighter for Clash Display impact */
+   --leading-normal: 1.5;
+   --leading-relaxed: 1.6;
+
+   /* ========================================
+     SPACING SYSTEM (Pretty Patty Rhythm)
+     ======================================== */
+
+   --space-xs: 0.5rem;
+   /* 8px */
+   --space-sm: 1rem;
+   /* 16px */
+   --space-md: 1.5rem;
+   /* 24px */
+   --space-lg: 2rem;
+   /* 32px */
+   --space-xl: 3rem;
+   /* 48px */
+   --space-2xl: 4rem;
+   /* 64px */
+   --space-3xl: 6rem;
+   /* 96px */
+
+   /* ========================================
+     BORDER RADIUS (Pretty Patty Softness)
+     ======================================== */
+
+   --radius-sm: 8px;
+   --radius-md: 16px;
+   --radius-lg: 24px;
+   --radius-xl: 32px;
+   --radius-full: 50%;
+
+   /* ========================================
+     SHADOWS (Subtle Elevation)
+     ======================================== */
+
+   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.1);
+   --shadow-hover: 0 16px 32px rgba(0, 0, 0, 0.12);
+
+   /* ========================================
+     TRANSITIONS
+     ======================================== */
+
+   --transition-fast: 150ms ease;
+   --transition-base: 200ms ease;
+   --transition-slow: 300ms ease;
+   --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+   /* ========================================
+     LAYOUT
+     ======================================== */
+
+   --container-max: 1200px;
+   --container-padding: var(--space-md);
+   --grid-gap: var(--space-md);
+}
