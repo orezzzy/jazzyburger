@@ -771,7 +771,7 @@
 
     .product-slider .swiper-button-prev,
     .product-slider .swiper-button-next {
-        display: none !important;
+        display: none;
     }
 
     /* Show only if inside the pagination wrapper */
