@@ -685,7 +685,7 @@
     width: 100%;
     margin: 0;
     z-index: 100;
-    pointer-events: none;
+    pointer-events: auto;
     display: none;
     /* Hidden on desktop */
 }
@@ -771,6 +771,12 @@
 
     .product-slider .swiper-button-prev,
     .product-slider .swiper-button-next {
+        display: none !important;
+    }
+
+    /* Show only if inside the pagination wrapper */
+    .products__pagination-wrapper .swiper-button-prev,
+    .products__pagination-wrapper .swiper-button-next {
         display: flex !important;
         position: relative !important;
         top: auto !important;
@@ -781,6 +787,7 @@
         margin: 0;
         background: white;
         border: 1px solid rgba(254, 39, 10, 0.2);
+        pointer-events: auto !important;
     }
 
     .product-card__name {
