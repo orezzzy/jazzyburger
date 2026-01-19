@@ -769,8 +769,8 @@
         opacity: 1;
     }
 
-    .product-slider .swiper-button-prev,
-    .product-slider .swiper-button-next {
+    .product-slider>.swiper-button-prev,
+    .product-slider>.swiper-button-next {
         display: none;
     }
 
