@@ -208,8 +208,8 @@ const discountCodes = {
   'JAZZY20': { type: 'percent', value: 20, message: '20% OFF Applied!' },
   'DONJAZZY': { type: 'percent', value: 50, message: '50% VIP Discount Applied!' },
   'FIRSTORDER': { type: 'fixed', value: 2000, message: '₦2,000 OFF Applied!' },
-  'LOVN100': { type: 'percent', value: 100, message: 'LOVE IS FREE! 100% OFF Applied! ❤️' },
-  'CUPIDSZN': { type: 'percent', value: 25, message: 'CUPID SEASON! 25% OFF Applied! 🏹' }
+  'LOVN100': { type: 'fixed', value: 1000, message: '₦1,000 Love Discount Applied!' },
+  'CUPIDSZN': { type: 'percent', value: 14, message: '14% Cupid Season Applied!' }
 };
 
 const cartDrawer = document.getElementById('cartDrawer');
