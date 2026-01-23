@@ -2355,6 +2355,109 @@
     color: var(--color-text-primary);
 }
 
+/* Discount & Promo Styles */
+.cart-footer__discount-section {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px dashed var(--color-border-light);
+}
+
+.cart-footer__promo-toggle {
+    background: none;
+    border: none;
+    color: var(--color-accent-primary);
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.cart-footer__promo-toggle:hover {
+    opacity: 0.8;
+}
+
+.cart-footer__promo-input-wrapper {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    animation: slide-down 0.3s ease forwards;
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.promo-input {
+    flex-grow: 1;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    outline: none;
+}
+
+.promo-input:focus {
+    border-color: var(--color-accent-primary);
+}
+
+.discount-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(181, 20, 23, 0.1);
+    color: var(--color-accent-primary);
+    padding: 6px 12px;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+}
+
+.discount-badge__remove {
+    background: none;
+    border: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.discount-badge__remove:hover {
+    background-color: rgba(181, 20, 23, 0.1);
+}
+
+.cart-footer__total-row--discount .cart-footer__amount {
+    color: var(--color-accent-primary);
+    font-size: 1rem;
+}
+
+.cart-footer__total-row--final {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.cart-footer__total-row--final .cart-footer__amount {
+    font-size: 1.5rem;
+    color: var(--color-accent-primary);
+}
+
 /* ========================================
    BRAND MARQUEE
    ======================================== */

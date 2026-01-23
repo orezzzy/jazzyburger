@@ -202,6 +202,13 @@ document.addEventListener('click', (e) => {
 
 // Persist cart using localStorage
 let cart = JSON.parse(localStorage.getItem('jazzy_cart') || '[]');
+let appliedDiscount = JSON.parse(localStorage.getItem('jazzy_discount') || 'null');
+
+const discountCodes = {
+  'JAZZY20': { type: 'percent', value: 20, message: '20% OFF Applied!' },
+  'DONJAZZY': { type: 'percent', value: 50, message: '50% VIP Discount Applied!' },
+  'FIRSTORDER': { type: 'fixed', value: 2000, message: '₦2,000 OFF Applied!' }
+};
 
 const cartDrawer = document.getElementById('cartDrawer');
 const cartOverlay = document.getElementById('cartOverlay');
@@ -218,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function saveCart() {
   localStorage.setItem('jazzy_cart', JSON.stringify(cart));
+  localStorage.setItem('jazzy_discount', JSON.stringify(appliedDiscount));
 }
 
 // Recommended items for empty state
@@ -303,14 +311,55 @@ function renderCart() {
     `).join('');
 
     // Cart Footer with Total
-    const total = cart.reduce((sum, item) => {
+    const subtotal = cart.reduce((sum, item) => {
       const p = parseInt(item.price.replace(/[^\d]/g, ''));
       return sum + (p * item.quantity);
     }, 0);
 
+    let discountAmount = 0;
+    if (appliedDiscount) {
+      if (appliedDiscount.type === 'percent') {
+        discountAmount = subtotal * (appliedDiscount.value / 100);
+      } else if (appliedDiscount.type === 'fixed') {
+        discountAmount = appliedDiscount.value;
+      }
+    }
+
+    const total = subtotal - discountAmount;
+
     if (cartFooter) {
       cartFooter.innerHTML = `
+        <div class="cart-footer__discount-section">
+          ${appliedDiscount ? `
+            <div class="discount-badge">
+              <span>${appliedDiscount.message}</span>
+              <button class="discount-badge__remove" onclick="removeDiscount()">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+          ` : `
+            <button class="cart-footer__promo-toggle" onclick="togglePromoInput()">Have a discount code?</button>
+            <div class="cart-footer__promo-input-wrapper" id="promoInputWrapper" style="display: none;">
+              <input type="text" id="promoCodeInput" placeholder="Enter code" class="promo-input">
+              <button class="btn btn--primary btn--sm" onclick="handleApplyPromo()">Apply</button>
+            </div>
+          `}
+        </div>
+
         <div class="cart-footer__total-row">
+          <span class="cart-footer__label">Subtotal</span>
+          <span class="cart-footer__amount">₦${subtotal.toLocaleString()}</span>
+        </div>
+        ${appliedDiscount ? `
+          <div class="cart-footer__total-row cart-footer__total-row--discount">
+            <span class="cart-footer__label">Discount</span>
+            <span class="cart-footer__amount">-₦${discountAmount.toLocaleString()}</span>
+          </div>
+        ` : ''}
+        <div class="cart-footer__total-row cart-footer__total-row--final">
           <span class="cart-footer__label">Total</span>
           <span class="cart-footer__amount">₦${total.toLocaleString()}</span>
         </div>
@@ -319,6 +368,41 @@ function renderCart() {
     }
   }
 }
+
+// Discount Code Functions
+window.togglePromoInput = function () {
+  const wrapper = document.getElementById('promoInputWrapper');
+  if (wrapper) {
+    wrapper.style.display = wrapper.style.display === 'none' ? 'flex' : 'none';
+    if (wrapper.style.display === 'flex') {
+      const input = document.getElementById('promoCodeInput');
+      if (input) input.focus();
+    }
+  }
+};
+
+window.handleApplyPromo = function () {
+  const input = document.getElementById('promoCodeInput');
+  if (!input) return;
+  const code = input.value.trim().toUpperCase();
+
+  if (discountCodes[code]) {
+    appliedDiscount = discountCodes[code];
+    saveCart();
+    renderCart();
+    showToast('Promo code applied!');
+  } else {
+    showToast('Invalid promo code');
+  }
+};
+
+window.removeDiscount = function () {
+  appliedDiscount = null;
+  saveCart();
+  renderCart();
+  showToast('Promo code removed');
+};
+
 
 function addToCart(name, price, customizations = [], img = 'assets/burger-classic.png') {
   const existingItemIndex = cart.findIndex(item =>
